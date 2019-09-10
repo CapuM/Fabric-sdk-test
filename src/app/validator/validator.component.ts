@@ -17,9 +17,10 @@ export class ValidatorComponent implements OnInit {
   }
 
   getTodos(){
-this.httpClient.get('http://jsonplaceholder.typicode.com/posts?_page=1&_limit=5').subscribe(res=>{this.addTodo(res);
-},
-err=>{
+this.httpClient
+.get('http://jsonplaceholder.typicode.com/posts?_page=1&_limit=5')
+.subscribe(res=>{this.addTodo(res);},
+  err=>{
   console.log(err)
 }
 )
@@ -27,9 +28,8 @@ err=>{
   };
 
   addTodo(result){
-    for(let i =0; i < result.length; i++){
-      this.todos.push({id:result[i],title:result[i],completed:result[i]});
-    }
+    console.log(result)
+this.todos = result
 
   }
 

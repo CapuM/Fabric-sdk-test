@@ -2,15 +2,14 @@
 <div class="panel panel-primary">
     <div class="panel-heading" >Validator Operation</div>
     <div class="panel-body" >
-      <ul>
-        <li *ngFor="let todo of todos">
 
-          {{todo}}
-
-        </li>
-         
-
-      </ul>
+         <ul *ngFor="let todo of todos"><div class="card" >
+          <h3 >{{todo.title}}</h3>
+          
+            <p >{{todo.body}}</p>
+           
+            </div></ul>   
+       
      <button (click)="getTodos()">Query all patents</button>
 
       
